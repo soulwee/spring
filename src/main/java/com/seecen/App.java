@@ -4,6 +4,7 @@ import com.seecen.config.MainConfig;
 import com.seecen.service.UserService;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationEvent;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -32,11 +33,13 @@ public class App
         u.deleteUser(1);
         u.findUser();*/
 
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
         User person = (User)applicationContext.getBean("person");
         System.out.println(person);
         Object myBeanPostProcessor = applicationContext.getBean("myBeanPostProcessor");
         System.out.println(myBeanPostProcessor);
         System.out.println( "Hello World!" );
+        applicationContext.publishEvent(new String("我发布的时间"));
+        applicationContext.close();
     }
 }
