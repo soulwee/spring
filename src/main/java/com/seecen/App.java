@@ -35,6 +35,8 @@ public class App
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
         User person = (User)applicationContext.getBean("person");
         System.out.println(person);
+        Object myBeanPostProcessor = applicationContext.getBean("myBeanPostProcessor");
+        System.out.println(myBeanPostProcessor);
         System.out.println( "Hello World!" );
     }
 }

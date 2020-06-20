@@ -9,12 +9,12 @@ import org.springframework.context.annotation.ComponentScan.Filter;
 
 @ComponentScans(
 		value = {
-				@ComponentScan(value="com.seecen",includeFilters = {
-/*						@Filter(type=FilterType.ANNOTATION,classes={Controller.class}),
-						@Filter(type=FilterType.ASSIGNABLE_TYPE,classes={BookService.class}),*/
-						@Filter(type=FilterType.CUSTOM,classes={MyTypeFilter.class}
-						)
-				},useDefaultFilters = false)	
+				@ComponentScan(value="com.seecen",
+						/*includeFilters = {
+					@Filter(type=FilterType.ANNOTATION,classes={Controller.class}),
+						@Filter(type=FilterType.ASSIGNABLE_TYPE,classes={BookService.class}),
+						@Filter(type=FilterType.CUSTOM,classes={MyTypeFilter.class})
+				},*/ useDefaultFilters = true)
 		}
 		)
 //@ComponentScan  value:指定要扫描的包
